@@ -19,8 +19,8 @@ public class Main {
 		while(choice != 7) {
 			
 			String randomCall = generateRandomPhoneNumberFromList();
-			System.out.println("\nYou have received a missed call from "+randomCall+". Your options: ");
 			Call call = new Call(randomCall, contactsList);
+			System.out.println("\nYou have received a missed call from "+call.callerID+". Your options: ");			
 			missedCallsList.addCall(call);
 			System.out.println("1. View Caller Details");
 			System.out.println("2. Show Call Log");
