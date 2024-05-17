@@ -1,17 +1,21 @@
 package callSimulate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class Call {
 	String phoneNumber;
 	String callerID;
-	LocalTime timeOfCall;
+	String timeOfCall;
 	
 	Call(String phoneNumber, ContactList contactsList) {
 		this.phoneNumber = phoneNumber;
-		if(contactsList.hasPhone(phoneNumber)) {
-			this.callerID = contactsList.getCallerID(phoneNumber);
-		}
-		this.timeOfCall = LocalTime.now();
+		this.callerID = contactsList.getCallerID(this.phoneNumber);
+		
+		LocalTime currentTime = LocalTime.now();		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+        String formattedTime = currentTime.format(formatter);
+		
+		this.timeOfCall = formattedTime;
 	}
 	
 	String fetchCallerID(String phoneNumber, ContactList contactsList) {
@@ -20,7 +24,7 @@ public class Call {
 	}
 	
 	String callInfo(ContactList contactsList) {
-		return "Caller ID: "+this.fetchCallerID(phoneNumber, contactsList)+"  PhoneNumber: "+this.phoneNumber+"  Time of Call: "+this.timeOfCall;
+		return "Caller ID: "+this.fetchCallerID(phoneNumber, contactsList)+"  Phone Number: "+this.phoneNumber+"  Time of Call: "+this.timeOfCall;
 	}
 	
 }

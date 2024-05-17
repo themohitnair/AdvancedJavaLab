@@ -43,7 +43,7 @@ public class ContactList {
 	}
 	
 	String getCallerID(String phoneNumber) {
-		if(contacts.containsKey(phoneNumber) && validatePhoneNumber(phoneNumber)) {
+		if(contacts.containsKey(phoneNumber) && validatePhoneNumber(phoneNumber) && !contacts.isEmpty()) {
 			return contacts.get(phoneNumber);
 		}
 		else {
