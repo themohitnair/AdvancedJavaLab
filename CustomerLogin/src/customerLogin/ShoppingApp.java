@@ -48,9 +48,7 @@ public class ShoppingApp {
 				
 				
 			}
-		});
-		
-		
+		});		
 		
 		pan.add(select);
 		pan.add(itemDD);
