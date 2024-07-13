@@ -26,4 +26,3 @@ public class Anagrams {
         return Arrays.equals(charArray1, charArray2);
     }
 }
-

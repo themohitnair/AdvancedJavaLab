@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 class Stack<T> {
-	private ArrayList<T> stack = new ArrayList<>();
+    private ArrayList<T> stack = new ArrayList<>();
 
     public void push(T value) {
         stack.add(value);
     }
 
     public T pop() {
-        if (isEmpty()) {
+        if (stack.isEmpty()) {
             System.out.println("Stack is empty");
             return null;
         }
@@ -19,7 +19,7 @@ class Stack<T> {
     }
 
     public T peek() {
-        if (isEmpty()) {
+        if (stack.isEmpty()) {
             System.out.println("Stack is empty");
             return null;
         }
@@ -37,99 +37,51 @@ class Stack<T> {
     public void display() {
         System.out.println(stack);
     }
-    
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Stack<String> stringStack = new Stack<>();
         Stack<Integer> integerStack = new Stack<>();
+
+        System.out.println("Choose stack type: 1. String 2. Integer");
+        int stackChoice = scanner.nextInt();
         boolean exit = false;
 
-        System.out.println("Choose the type of stack to interact with:");
-        System.out.println("1. String Stack");
-        System.out.println("2. Integer Stack");
-        System.out.print("Enter your choice: ");
-        int stackChoice = scanner.nextInt();
-
         while (!exit) {
-            System.out.println("\nChoose an operation:");
-            if (stackChoice == 1) {
-                System.out.println("1. Push to String Stack");
-                System.out.println("2. Pop from String Stack");
-                System.out.println("3. Peek at String Stack");
-                System.out.println("4. Clear String Stack");
-                System.out.println("5. Check if String Stack is Empty");
-                System.out.println("6. Display String Stack");
-            } else if (stackChoice == 2) {
-                System.out.println("1. Push to Integer Stack");
-                System.out.println("2. Pop from Integer Stack");
-                System.out.println("3. Peek at Integer Stack");
-                System.out.println("4. Clear Integer Stack");
-                System.out.println("5. Check if Integer Stack is Empty");
-                System.out.println("6. Display Integer Stack");
-            }
-            System.out.println("7. Exit");
-            System.out.print("Enter your choice: ");
+            System.out.println("\n1. Push 2. Pop 3. Peek 4. Clear 5. Check Empty 6. Display 7. Exit");
             int choice = scanner.nextInt();
 
             switch (choice) {
                 case 1:
+                    System.out.print("Enter value: ");
                     if (stackChoice == 1) {
-                        System.out.print("Enter a string to push: ");
                         scanner.nextLine(); // Consume newline
-                        String strValue = scanner.nextLine();
-                        stringStack.push(strValue);
+                        stringStack.push(scanner.nextLine());
                     } else {
-                        System.out.print("Enter an integer to push: ");
-                        int intValue = scanner.nextInt();
-                        integerStack.push(intValue);
+                        integerStack.push(scanner.nextInt());
                     }
                     break;
                 case 2:
-                    if (stackChoice == 1) {
-                        System.out.println("Popped: " + stringStack.pop());
-                    } else {
-                        System.out.println("Popped: " + integerStack.pop());
-                    }
+                    System.out.println("Popped: " + (stackChoice == 1 ? stringStack.pop() : integerStack.pop()));
                     break;
                 case 3:
-                    if (stackChoice == 1) {
-                        System.out.println("Peek: " + stringStack.peek());
-                    } else {
-                        System.out.println("Peek: " + integerStack.peek());
-                    }
+                    System.out.println("Peek: " + (stackChoice == 1 ? stringStack.peek() : integerStack.peek()));
                     break;
                 case 4:
-                    if (stackChoice == 1) {
-                        stringStack.clear();
-                        System.out.println("String Stack cleared");
-                    } else {
-                        integerStack.clear();
-                        System.out.println("Integer Stack cleared");
-                    }
+                    if (stackChoice == 1) stringStack.clear(); else integerStack.clear();
+                    System.out.println("Stack cleared");
                     break;
                 case 5:
-                    if (stackChoice == 1) {
-                        System.out.println("Is String Stack empty? " + stringStack.isEmpty());
-                    } else {
-                        System.out.println("Is Integer Stack empty? " + integerStack.isEmpty());
-                    }
+                    System.out.println("Is empty? " + (stackChoice == 1 ? stringStack.isEmpty() : integerStack.isEmpty()));
                     break;
                 case 6:
-                    if (stackChoice == 1) {
-                        System.out.print("String Stack: ");
-                        stringStack.display();
-                    } else {
-                        System.out.print("Integer Stack: ");
-                        integerStack.display();
-                    }
+                    if (stackChoice == 1) stringStack.display(); else integerStack.display();
                     break;
                 case 7:
                     exit = true;
-                    System.out.println("Exiting...");
                     break;
                 default:
-                    System.out.println("Invalid choice, please try again.");
-                    break;
+                    System.out.println("Invalid choice");
             }
         }
         scanner.close();

@@ -44,22 +44,23 @@ public class CustomerShoppingApp {
 				
 				if (username.equals("user") && password.equals("password")) {
 					JOptionPane.showMessageDialog(loginDialog, "Login successful");	
+					if (col.checkCustomerExists(phone)) {
+						JOptionPane.showMessageDialog(loginDialog, "Your Customer ID is: "+ col.retrieveCustomerID(phone));
+						loginDialog.dispose();
+					}
+					else {
+						col.addNewCustomer(phone);
+						JOptionPane.showMessageDialog(loginDialog, "Your New Customer ID is: "+ col.retrieveCustomerID(phone));		
+						loginDialog.dispose();
+					}
+					ShoppingApp shop = new ShoppingApp(col.retrieveCustomerID(phone));
 				}
 				else {
 					JOptionPane.showMessageDialog(loginDialog, "Invalid Credentials");						
 				}
 				
 				
-				if (col.checkCustomerExists(phone)) {
-					JOptionPane.showMessageDialog(loginDialog, "Your Customer ID is: "+ col.retrieveCustomerID(phone));
-					loginDialog.dispose();
-				}
-				else {
-					col.addNewCustomer(phone);
-					JOptionPane.showMessageDialog(loginDialog, "Your New Customer ID is: "+ col.retrieveCustomerID(phone));		
-					loginDialog.dispose();
-				}
-				ShoppingApp shop = new ShoppingApp(col.retrieveCustomerID(phone));
+				
 			}
 		});
 		loginDialog.setVisible(true);
