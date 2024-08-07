@@ -35,15 +35,16 @@ c. Prompt for a publisher name and list all the books with the same publisher na
 6. Create a desktop java application using swings to enable a user to enter student information such as name, usn, age, address, sgpa of 4 semesters, category.
 a. Perform validations on all the fields. Display appropriate messages in pop up boxes to indicate wrong entries.
 b. On clicking of the “compute” button, find the cgpa. On clicking of the “done” button, place the student details in a collection. Display the collection in a textarea on the click of a button.
-
+[Click here](StudentInformation/src/stuInfo)
 
 7. Write a java program using Swing to perform the following: 
     a. Allow the user to enter the item purchased by giving the item id and quantity purchased.
     b. On clicking of a button, the item name and the total cost should appear in the corresponding GUI components.
     c. Using option dialog box, indicate the types of discount available for the customer. On clicking on the print button, print the details of final cost in information dialog box.
-
+[Click here](Shop/src/shop/)
 
 8. Write a program that uses Java Swing and JDBC to create a stand-alone application. Create a table named Customer (CustNo, CustName, State, Credit_Limit) in MySQL database. Use appropriate Swing components to insert values in a form and populate the MySQL table. Using JDBC, display the Customer table.
-
+[Click here](Customers/src/custs)
 
 9. Write a program that uses Java Swing and JDBC to create a stand-alone application. Create a table named Representative (RepNo, RepName, State, Comission, Rate) in MySQL database. Use appropriate Swing components to insert values in a form and populate the MySQL table. Using JDBC, display the Representative table.
+[Click here](Representatives/src/reps)
