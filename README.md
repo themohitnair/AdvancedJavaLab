@@ -6,12 +6,12 @@ A collection of Advanced Java Laboratory Programs (ISL48, RITB ISE 2022).
 
 1. **Write a program to demonstrate the working of String methods:**
    - **a.** To determine the frequency of substrings in a string  
-     **[Click here](SubstringFreq/bin/substringSearch/)**
+     **[Click here](SubstringFreq/src/substringSearch/)**
    - **b.** To check for anagrams (two strings having the same characters)  
-     **[Click here](Anagrams/bin/anagramCheck/)**
+     **[Click here](Anagrams/src/anagramCheck/)**
 
 2. **Write a program to create a generic Stack class with `push()`, `pop()`, `clear()`, `isEmpty()`, and `display()` methods. Demonstrate the creation of a Stack of String and Integer objects.**  
-   **[Click here](StackGen/bin/genericStack/)**
+   **[Click here](StackGen/src/genericStack/)**
 
 3. **Write a program that simulates a telephone that records missed incoming calls. For each missed call, store the time of the call, telephone number of origin, and name of the caller if the name is available. For unlisted numbers, set the name to “private caller”. Choose or extend the most appropriate collection class and provide the following features:**
    - **a.** Numbers are recalled in the order they arrive.
@@ -19,7 +19,7 @@ A collection of Advanced Java Laboratory Programs (ISL48, RITB ISE 2022).
      - **i.** To delete the call.
      - **ii.** To display the call details (number, caller name, and time). Delete the number if the user specifies a number to delete.
    - Write a helper class to represent an incoming call with fields to hold the number, name of the caller, and time of the call. Write a tester class that stores several numbers, simulates the user pressing the missed-calls button, and finally prints the entire collection of stored calls.  
-   **[Click here](CallSimulation/bin/simulateCalls/)**
+   **[Click here](CallSimulation/src/simulateCalls/)**
 
 4. **Write a Java program using user-defined storage classes to create a book database and store it in a Collection List:**
    - **a.** The book collection should include title, author, publisher, and price.
